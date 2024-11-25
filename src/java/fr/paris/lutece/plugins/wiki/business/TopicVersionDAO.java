@@ -291,7 +291,7 @@ public final class TopicVersionDAO implements ITopicVersionDAO {
             daoUtil.setInt(1, topicVersion.getIdTopicVersion());
             daoUtil.setString(2, topicVersion.getEditComment());
             daoUtil.setInt(3, topicVersion.getIdTopic());
-            daoUtil.setString(4, topicVersion.getUserName());
+            daoUtil.setString(4, topicVersion.getLuteceUserId());
             daoUtil.setTimestamp(5, new java.sql.Timestamp(new java.util.Date().getTime()));
             daoUtil.setInt(6, topicVersion.getIdTopicVersionPrevious());
             daoUtil.setBoolean(7, topicVersion.getIsPublished());

@@ -259,7 +259,7 @@ public class LuteceWikiParser extends WikiParser
 
         try
         { // validate URI
-            uri = new URI( link [0].trim( ) );
+            uri = new URI( link [0].replaceAll( " ", "" ).trim( ) );
         }
         catch( URISyntaxException e )
         {

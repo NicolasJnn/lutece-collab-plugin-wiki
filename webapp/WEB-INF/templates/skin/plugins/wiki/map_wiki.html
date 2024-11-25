@@ -25,7 +25,7 @@
                     <span class="glyphicon glyphicon-search"></span>  #i18n{wiki.menu.search}
                 </button>
                 <#list languages_list as language>
-                    <#if language = current_language >
+                    <#if language == current_language>
                         <span class="label label-info">${language}</span>
                     <#else>
                         <a class="btn btn-default" href="jsp/site/Portal.jsp?page=wiki&view=list&language=${language}">
@@ -36,13 +36,13 @@
             </div>
 
             <div id="div-new-page" style="display:none">
-                <form class="form-search" action="jsp/site/Portal.jsp" method="post" >
+                <form class="form-search" action="jsp/site/Portal.jsp" method="post">
                     <input type="hidden" name="page" value="wiki" />
                     <input type="hidden" name="action" value="newPage" />
 
                     <div class="input-append">
                         <input class="search-query col-sm-4" id="input-new-page" type="text" name="page_name" /> &nbsp;
-                        <button class="btn btn-primary btn-xs" type="submit" >
+                        <button class="btn btn-primary btn-xs" type="submit">
                             <span class="glyphicon glyphicon-plus-sign"></span> #i18n{wiki.list_wiki.create}
                         </button>
                     </div>
@@ -56,7 +56,7 @@
                     #i18n{wiki.search_wiki.search} :
                     <div class="input-append">
                         <input class="search-query" id="input-search" type="text" name="query" />
-                        <button class="btn btn-primary btn-xs" type="submit" >
+                        <button class="btn btn-primary btn-xs" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </div>
@@ -77,7 +77,7 @@
             </#if>
             <#if (map_topic_children[""])??>
                 <#list map_topic_children[""] as topic>
-                    <#if topic.pageName != wiki_root_page_name >
+                    <#if topic.pageName != wiki_root_page_name>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <a class="panel-title" href="jsp/site/Portal.jsp?page=wiki&view=page&page_name=${topic.pageName}">${map_topic_title[topic.pageName]}</a>
@@ -109,4 +109,3 @@
         });
     });
 </script>
-

@@ -9,7 +9,8 @@
                     </a>
                     <button name="view_preview" class="btn btn-default" type="submit" title="#i18n{wiki.menu.preview}" onclick="validate(this)">
                         <span class="glyphicon glyphicon-eye-open"></span> #i18n{wiki.menu.preview}
-                    </button>                        <#if has_admin_role >
+                    </button>                        
+                <#if has_admin_role >
                     <form id="form-page-delete" action="jsp/site/Portal.jsp" method="post" >
                         <input type="hidden" name="page" value="wiki" />
                         <input type="hidden" name="page_name" value="${topic.pageName}" />

@@ -108,6 +108,27 @@ public final class RoleService
         }
         return true;
     }
+    
+    /**
+     * Checks if the user has the edit role for the given topic
+     * 
+     * @param request
+     *            The request
+     * @param editRole
+     *            The constant of the edit role
+     * @return true if he has otherwise false
+     */
+    public static boolean hasEditRole( HttpServletRequest request, String strRole )
+    {
+        if ( SecurityService.isAuthenticationEnable( ) )
+        {
+            if ( !Page.ROLE_NONE.equals( strRole ) )
+            {
+                return SecurityService.getInstance( ).isUserInRole( request, strRole);
+            }
+        }
+        return true;
+    }
 
     /**
      * Checks if the user has the admin role
